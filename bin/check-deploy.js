@@ -62,16 +62,16 @@ function pushRecord() {
         }
         log(primary('准备提交 commit record.config.txt'))
         // 执行git commit命令
-        exec(`git commit -m "${commitMessage}"`, (commitErr, commitStdout, commitStderr) => {
+        exec(`git commit -m "${commitMessage}" --no-verify`, (commitErr, commitStdout, commitStderr) => {
             if (commitErr) {
-                log(console.error(`Error committing file: ${commitErr}`))
+                log(errorLog(`Error committing file: ${commitErr}`))
                 return
             }
             log(primary('准备提交 push record.config.txt'))
             // 执行git push命令
             exec('git push', (pushErr, pushStdout, pushStderr) => {
                 if (pushErr) {
-                    log(console.error(`Error pushing to repository: ${pushErr}`))
+                    log(errorLog(`Error pushing to repository: ${pushErr}`))
                     return
                 }
                 log(primary('push record.config.txt 完成'))
