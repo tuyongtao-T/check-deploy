@@ -1,0 +1,22 @@
+{
+  "name": "check-deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create": "./bin/create.js",
+    "check-deploy": "./bin/check-deploy.js"
+  },
+  "scripts": {
+    "test": "node ./bin/add.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "volta": {
+    "node": "10.24.1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^7.1.0"
+  }
+}
